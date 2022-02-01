@@ -15,12 +15,20 @@ const handleClick=(text)=>{
     }
     setTodos([...todos,payload])
 }
+const handleDelete=(id)=>{
+   const removeItem= todos.filter(item=>{
+        return item.id!==id
+    })
+    setTodos(removeItem)
+    
+}
+
 
 
   return <div>
    <GroceryInput handleClick={handleClick}/>
    {todos.map((e)=>{
-       return <GroceryList key={e.id} title={e.title}/>
+       return <GroceryList handleDelete={handleDelete} id={e.id} key={e.id} title={e.title} status={e.staus}/>
    })}
   </div>;
 }

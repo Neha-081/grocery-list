@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 function GroceryInput({handleClick}) {
     const [text,setText]=useState("")
+
   return <div>
       <input type='text' 
       placeholder="Enter Something"
@@ -12,6 +13,8 @@ function GroceryInput({handleClick}) {
       />
       <button onClick={()=>{
           handleClick(text)
+
+         
       }}>Add Todo</button>
   </div>;
 }
